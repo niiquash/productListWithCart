@@ -1,4 +1,5 @@
 import AddToCartButton from "../addToCartButton/addToCartButton";
+import QuantityButton from "../quantityButton/QuantityButton";
 const Product = ({ product }) => {
   return (
     <>
@@ -10,6 +11,7 @@ const Product = ({ product }) => {
             className="product-image"
           />
           <AddToCartButton />
+          <QuantityButton />
         </div>
         <div className="product-info">
           <p className="product-category">{product.category}</p>
