@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 }
 
 .order-summary {
@@ -121,4 +121,10 @@
   color: white;
   font-size: 16px;
   font-weight: 600;
+
+  cursor: pointer;
+}
+
+.start-new-order-button:hover {
+  background-color: color-mix(in srgb, #c73b0f 75%, #000 25%);
 }
