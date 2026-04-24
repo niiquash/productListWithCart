@@ -1,17 +1,17 @@
 .quantity-button {
   position: absolute;
-  bottom: 0;
+  bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
 
   background-color: #c73b0f;
-  padding: 12px 13px;
+  padding: 13px 13px;
   border-radius: 999px;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 42px;
+  gap: 46px;
 }
 
 .quantity {
@@ -21,8 +21,8 @@
 
 .quantity-reduce-button,
 .quantity-increase-button {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border: 1px solid white;
   border-radius: 50%;
   background: none;

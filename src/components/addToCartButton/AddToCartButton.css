@@ -1,15 +1,17 @@
-.add-to-cart-button-container {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.wrap {
+  text-wrap: nowrap;
 }
 
 .add-to-cart-button {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 28px;
+  padding: 12px 28px;
   background-color: white;
   border: 1px solid #c73b0f;
   border-radius: 999px;

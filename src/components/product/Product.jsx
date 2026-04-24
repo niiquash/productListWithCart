@@ -12,7 +12,7 @@ const Product = ({ product }) => {
             alt={product.name}
             className="product-image"
           />
-          {/* <AddToCartButton /> */}
+          <AddToCartButton />
           <QuantityButton />
         </div>
         <div className="product-info">
