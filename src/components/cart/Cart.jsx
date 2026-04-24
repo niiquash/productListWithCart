@@ -1,14 +1,51 @@
+import "./Cart.css";
+
 const Cart = () => {
   return (
     <div className="cart">
       <h2 className="cart-heading">Your Cart (0)</h2>
-      <div className="cart-details">
+      <div className="cart-details empty-cart">
         <img
           src="/images/illustration-empty-cart.svg"
           alt="Empty cart"
           className="empty-cart-image"
         />
         <p className="empty-cart-text">Your added items will appear here</p>
+      </div>
+
+      <div className="cart-details filled-cart">
+        <div className="cart-items">
+          <div className="cart-item">
+            <div className="cart-item-info">
+              <h3 className="cart-item-heading">Classic Tiramisu</h3>
+              <div className="cart-item-amounts">
+                <span className="item-quantity">1x</span>
+                <span className="item-unit-price">@ $14.99</span>
+                <span className="item-total-price">$14.99</span>
+              </div>
+            </div>
+            <button className="remove-item-button">
+              <img src="/images/icon-remove-item.svg" alt="remove item icon" />
+            </button>
+          </div>
+        </div>
+
+        <div className="order-total">
+          <p className="order-total-text">Order Total</p>
+          <p className="order-total-amount">$0.00</p>
+        </div>
+        <div className="delivery-note">
+          <img
+            src="/images/icon-carbon-neutral.svg"
+            alt="icon of a tree"
+            className="carbon-neutral-icon"
+          />
+          <p className="delivery-note-text">
+            This is a <span>carbon-neutral</span> delivery
+          </p>
+        </div>
+
+        <button className="confirm-order-button">Confirm Order</button>
       </div>
     </div>
   );

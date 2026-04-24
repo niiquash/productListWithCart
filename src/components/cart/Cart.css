@@ -1,0 +1,167 @@
+.cart {
+  padding: 24px;
+  margin: 0 auto;
+  max-width: 327px;
+}
+
+.cart-heading {
+  color: #c73b0f;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cart-details.empty-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+.empty-cart-image {
+  width: 128px;
+  margin: 0 auto;
+}
+
+.empty-cart-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #87635a;
+  text-align: center;
+}
+
+/* Filled Cart */
+.cart-details.filled-cart {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f5eeec;
+  padding-bottom: 16px;
+}
+
+.cart-item:last-child {
+  margin-bottom: 0;
+}
+
+.cart-item-info {
+}
+
+.cart-item-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #260f08;
+}
+
+.cart-item-amounts {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-quantity {
+  font-size: 14px;
+  color: #c73b0f;
+  font-weight: 600;
+}
+
+.item-unit-price {
+  font-size: 14px;
+  color: #87635a;
+}
+
+.item-total-price {
+  font-size: 14px;
+  color: #87635a;
+  font-weight: 600;
+}
+
+.remove-item-button {
+  background: none;
+  border: 1px solid #87635a;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.remove-item-button img {
+  width: 9px;
+  height: 9px;
+}
+
+.remove-item-button:hover {
+  background-color: #260f08;
+}
+
+.order-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.order-total-text {
+  font-size: 14px;
+  color: #260f08;
+}
+
+.order-total-amount {
+  font-size: 24px;
+  color: #260f08;
+  font-weight: 700;
+}
+
+.delivery-note {
+  margin-top: 24px;
+  background-color: #fcf8f6;
+  padding: 16px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delivery-note-text {
+  font-size: 14px;
+  color: #260f08;
+}
+
+.delivery-note-text span {
+  font-weight: 700;
+}
+
+.confirm-order-button {
+  margin-top: 24px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 999px;
+  background-color: #c73b0f;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirm-order-button:hover {
+  background-color: color-mix(in srgb, #c73b0f 75%, #000000 25%);
+}
