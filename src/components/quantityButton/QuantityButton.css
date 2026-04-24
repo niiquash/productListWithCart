@@ -1,0 +1,42 @@
+.quantity-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: #c73b0f;
+  padding: 12px 13px;
+  border-radius: 999px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 42px;
+}
+
+.quantity {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quantity-reduce-button,
+.quantity-increase-button {
+  width: 18px;
+  height: 18px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.quantity-reduce-button:hover,
+.quantity-increase-button:hover {
+  background-color: white;
+  color: #c73b0f;
+}

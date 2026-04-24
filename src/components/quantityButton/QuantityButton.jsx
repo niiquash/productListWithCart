@@ -1,3 +1,5 @@
+import "./QuantityButton.css";
+
 const QuantityButton = () => {
   return (
     <div className="quantity-button">

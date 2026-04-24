@@ -1,3 +1,5 @@
+import "./AddToCartButton.css";
+
 const AddToCartButton = () => {
   return (
     <div className="add-to-cart-button-container">

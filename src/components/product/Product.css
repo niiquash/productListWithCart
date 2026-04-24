@@ -1,0 +1,17 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 327px;
+}
+
+.product-image-and-button {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

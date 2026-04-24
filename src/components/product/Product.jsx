@@ -1,16 +1,18 @@
 import AddToCartButton from "../addToCartButton/addToCartButton";
 import QuantityButton from "../quantityButton/QuantityButton";
+import "./Product.css";
+
 const Product = ({ product }) => {
   return (
     <>
       <div className="product-card">
         <div className="product-image-and-button">
           <img
-            src={product.image.thumbnail}
+            src={product.image.mobile}
             alt={product.name}
             className="product-image"
           />
-          <AddToCartButton />
+          {/* <AddToCartButton /> */}
           <QuantityButton />
         </div>
         <div className="product-info">
