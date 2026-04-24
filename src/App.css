@@ -1,5 +1,6 @@
 .app-container {
   padding: 24px;
+  position: relative;
 }
 
 .products-grid {
