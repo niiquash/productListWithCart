@@ -1,6 +1,6 @@
 import "./OrderSummary.css";
 
-const OrderSummary = () => {
+const OrderSummary = ({ cartItems }) => {
   return (
     <div className="order-summary-overlay">
       <div className="order-summary">
@@ -14,27 +14,38 @@ const OrderSummary = () => {
           <p className="order-confirmed-text">We hope you enjoy your food!</p>
         </header>
         <main className="order-items">
-          <div className="order-item">
-            <div className="order-item-image-and-details">
-              <img
-                src="/images/image-tiramisu-thumbnail.jpg"
-                alt="Product Image"
-                className="order-item-image"
-              />
-              <div className="order-item-details">
-                <p className="order-item-name">Classic Tiramisu</p>
-                <div className="order-item-count-and-price">
-                  <span className="order-item-count">1x</span>
-                  <span className="order-item-price">$5.50</span>
+          {cartItems.map((item) => (
+            <div key={item.id} className="order-item">
+              <div className="order-item-image-and-details">
+                <img
+                  src={item.image.thumbnail}
+                  alt="Product Image"
+                  className="order-item-image"
+                />
+                <div className="order-item-details">
+                  <p className="order-item-name">{item.name}</p>
+                  <div className="order-item-count-and-price">
+                    <span className="order-item-count">{item.quantity}x</span>
+                    <span className="order-item-price">
+                      ${item.price.toFixed(2)}
+                    </span>
+                  </div>
                 </div>
               </div>
+              <p className="item-amount">
+                ${(item.price * item.quantity).toFixed(2)}
+              </p>
             </div>
-            <p className="item-amount">$5.50</p>
-          </div>
+          ))}
         </main>
         <div className="order-summary-total">
           <p className="order-summary-total-text">Order Total</p>
-          <p className="order-summary-total-amount">$34.53</p>
+          <p className="order-summary-total-amount">
+            $
+            {cartItems
+              .reduce((total, item) => total + item.price * item.quantity, 0)
+              .toFixed(2)}
+          </p>
         </div>
         <button className="start-new-order-button">Start New Order</button>
       </div>

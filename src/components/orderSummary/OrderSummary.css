@@ -40,6 +40,10 @@
 .order-items {
   margin-top: 32px;
   padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .order-item {

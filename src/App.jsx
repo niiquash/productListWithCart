@@ -7,6 +7,7 @@ import OrderSummary from "./components/orderSummary/OrderSummary";
 function App() {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [isConfirmingOrder, setIsConfirmingOrder] = useState(false);
 
   useEffect(() => {
     fetch("/data.json")
@@ -29,8 +30,8 @@ function App() {
           />
         ))}
       </div>
-      <Cart cartItems={cartItems} />
-      {/* <OrderSummary /> */}
+      <Cart cartItems={cartItems} setIsConfirmingOrder={setIsConfirmingOrder} />
+      {isConfirmingOrder && <OrderSummary cartItems={cartItems} />}
     </div>
   );
 }

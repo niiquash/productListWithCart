@@ -1,9 +1,14 @@
 import "./Cart.css";
+import { Fragment } from "react";
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, setIsConfirmingOrder }) => {
   const getTotalPrice = cartItems
     .reduce((total, item) => total + item.price * item.quantity, 0)
     .toFixed(2);
+
+  const handleConfirmOrderClick = () => {
+    setIsConfirmingOrder(true);
+  };
 
   return (
     <div className="cart">
@@ -22,8 +27,8 @@ const Cart = ({ cartItems }) => {
         <div className="cart-details filled-cart">
           <div className="cart-items">
             {cartItems.map((item) => (
-              <>
-                <div key={item.id} className="cart-item">
+              <Fragment key={item.id}>
+                <div className="cart-item">
                   <div className="cart-item-info">
                     <h3 className="cart-item-heading">{item.name}</h3>
                     <div className="cart-item-amounts">
@@ -43,7 +48,7 @@ const Cart = ({ cartItems }) => {
                     />
                   </button>
                 </div>
-              </>
+              </Fragment>
             ))}
           </div>
 
@@ -62,7 +67,12 @@ const Cart = ({ cartItems }) => {
             </p>
           </div>
 
-          <button className="confirm-order-button">Confirm Order</button>
+          <button
+            className="confirm-order-button"
+            onClick={handleConfirmOrderClick}
+          >
+            Confirm Order
+          </button>
         </div>
       )}
     </div>
