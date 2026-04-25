@@ -10,7 +10,7 @@ const Product = ({ product, cartItems, setCartItems, isOrderConfirmed }) => {
   useEffect(() => {
     if (isOrderConfirmed) {
       setIsAddingToCart(false);
-      setQuantity(0);
+      setQuantity(1);
     }
   }, [isOrderConfirmed]);
 
