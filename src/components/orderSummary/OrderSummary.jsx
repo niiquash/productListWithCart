@@ -1,6 +1,16 @@
 import "./OrderSummary.css";
 
-const OrderSummary = ({ cartItems }) => {
+const OrderSummary = ({
+  cartItems,
+  setIsConfirmingOrder,
+  setCartItems,
+  setIsOrderConfirmed,
+}) => {
+  const restartOrder = () => {
+    setIsConfirmingOrder(false);
+    setIsOrderConfirmed(true);
+    setCartItems([]);
+  };
   return (
     <div className="order-summary-overlay">
       <div className="order-summary">
@@ -47,7 +57,14 @@ const OrderSummary = ({ cartItems }) => {
               .toFixed(2)}
           </p>
         </div>
-        <button className="start-new-order-button">Start New Order</button>
+        <button
+          className="start-new-order-button"
+          onClick={() => {
+            restartOrder();
+          }}
+        >
+          Start New Order
+        </button>
       </div>
     </div>
   );

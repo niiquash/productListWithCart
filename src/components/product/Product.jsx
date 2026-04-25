@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddToCartButton from "../addToCartButton/addToCartButton";
 import QuantityButton from "../quantityButton/QuantityButton";
 import "./Product.css";
 
-const Product = ({ product, cartItems, setCartItems }) => {
+const Product = ({ product, cartItems, setCartItems, isOrderConfirmed }) => {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    if (isOrderConfirmed) {
+      setIsAddingToCart(false);
+      setQuantity(0);
+    }
+  }, [isOrderConfirmed]);
 
   const handleAddToCartClick = () => {
     setIsAddingToCart(true);

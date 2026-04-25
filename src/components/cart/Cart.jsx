@@ -1,13 +1,14 @@
 import "./Cart.css";
 import { Fragment } from "react";
 
-const Cart = ({ cartItems, setIsConfirmingOrder }) => {
+const Cart = ({ cartItems, setIsConfirmingOrder, setIsOrderConfirmed }) => {
   const getTotalPrice = cartItems
     .reduce((total, item) => total + item.price * item.quantity, 0)
     .toFixed(2);
 
   const handleConfirmOrderClick = () => {
     setIsConfirmingOrder(true);
+    setIsOrderConfirmed(false);
   };
 
   return (

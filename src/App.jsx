@@ -8,6 +8,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [isConfirmingOrder, setIsConfirmingOrder] = useState(false);
+  const [isOrderConfirmed, setIsOrderConfirmed] = useState(false);
 
   useEffect(() => {
     fetch("/data.json")
@@ -27,11 +28,19 @@ function App() {
             product={product}
             cartItems={cartItems}
             setCartItems={setCartItems}
+            isOrderConfirmed={isOrderConfirmed}
           />
         ))}
       </div>
       <Cart cartItems={cartItems} setIsConfirmingOrder={setIsConfirmingOrder} />
-      {isConfirmingOrder && <OrderSummary cartItems={cartItems} />}
+      {isConfirmingOrder && (
+        <OrderSummary
+          setIsConfirmingOrder={setIsConfirmingOrder}
+          setIsOrderConfirmed={setIsOrderConfirmed}
+          setCartItems={setCartItems}
+          cartItems={cartItems}
+        />
+      )}
     </div>
   );
 }
