@@ -13,12 +13,17 @@ const Product = ({ product, cartItems, setCartItems }) => {
   };
 
   const handleQuantityChange = (newQuantity) => {
-    setQuantity(newQuantity);
-    setCartItems(
-      cartItems.map((item) =>
-        item.id === product.id ? { ...item, quantity: newQuantity } : item,
-      ),
-    );
+    if (newQuantity === 0) {
+      setIsAddingToCart(false);
+      setCartItems(cartItems.filter((items) => items.id !== product.id));
+    } else {
+      setQuantity(newQuantity);
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id ? { ...item, quantity: newQuantity } : item,
+        ),
+      );
+    }
   };
 
   console.log(cartItems);

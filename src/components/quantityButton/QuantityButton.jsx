@@ -5,7 +5,7 @@ const QuantityButton = ({ quantity, handleQuantityChange }) => {
     handleQuantityChange(quantity + 1);
   };
   const handleDecrease = () => {
-    if (quantity > 1) {
+    if (quantity > 0) {
       handleQuantityChange(quantity - 1);
     }
   };
