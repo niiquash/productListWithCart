@@ -1,7 +1,12 @@
 import "./Cart.css";
 import { Fragment } from "react";
 
-const Cart = ({ cartItems, setIsConfirmingOrder, setIsOrderConfirmed }) => {
+const Cart = ({
+  cartItems,
+  setCartItems,
+  setIsConfirmingOrder,
+  setIsOrderConfirmed,
+}) => {
   const getTotalPrice = cartItems
     .reduce((total, item) => total + item.price * item.quantity, 0)
     .toFixed(2);
@@ -9,6 +14,10 @@ const Cart = ({ cartItems, setIsConfirmingOrder, setIsOrderConfirmed }) => {
   const handleConfirmOrderClick = () => {
     setIsConfirmingOrder(true);
     setIsOrderConfirmed(false);
+  };
+
+  const handleRemoveItem = (itemId) => {
+    setCartItems(cartItems.filter((item) => item.id !== itemId));
   };
 
   return (
@@ -42,7 +51,10 @@ const Cart = ({ cartItems, setIsConfirmingOrder, setIsOrderConfirmed }) => {
                       </span>
                     </div>
                   </div>
-                  <button className="remove-item-button">
+                  <button
+                    className="remove-item-button"
+                    onClick={() => handleRemoveItem(item.id)}
+                  >
                     <img
                       src="/images/icon-remove-item.svg"
                       alt="remove item icon"

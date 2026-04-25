@@ -2,6 +2,8 @@
   padding: 24px;
   margin: 0 auto;
   max-width: 327px;
+  background-color: white;
+  border-radius: 12px;
 }
 
 .cart-heading {
@@ -54,9 +56,6 @@
 
 .cart-item:last-child {
   margin-bottom: 0;
-}
-
-.cart-item-info {
 }
 
 .cart-item-heading {
@@ -164,4 +163,10 @@
 
 .confirm-order-button:hover {
   background-color: color-mix(in srgb, #c73b0f 75%, #000000 25%);
+}
+
+@media (min-width: 768px) {
+  .cart {
+    max-width: 688px;
+  }
 }

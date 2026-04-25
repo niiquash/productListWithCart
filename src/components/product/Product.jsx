@@ -6,15 +6,27 @@ import "./Product.css";
 const Product = ({ product, cartItems, setCartItems, isOrderConfirmed }) => {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [isSelected, setIsSelected] = useState(false);
 
   useEffect(() => {
     if (isOrderConfirmed) {
       setIsAddingToCart(false);
       setQuantity(1);
+      setIsSelected(false);
     }
   }, [isOrderConfirmed]);
 
+  useEffect(() => {
+    const stillInCart = cartItems.some((item) => item.id === product.id);
+    if (!stillInCart) {
+      setIsAddingToCart(false);
+      setQuantity(1);
+      setIsSelected(false);
+    }
+  }, [cartItems, product.id]);
+
   const handleAddToCartClick = () => {
+    setIsSelected(true);
     setIsAddingToCart(true);
     setCartItems([...cartItems, { ...product, quantity: 1 }]);
   };
@@ -22,6 +34,7 @@ const Product = ({ product, cartItems, setCartItems, isOrderConfirmed }) => {
   const handleQuantityChange = (newQuantity) => {
     if (newQuantity === 0) {
       setIsAddingToCart(false);
+      setIsSelected(false);
       setCartItems(cartItems.filter((items) => items.id !== product.id));
     } else {
       setQuantity(newQuantity);
@@ -32,8 +45,6 @@ const Product = ({ product, cartItems, setCartItems, isOrderConfirmed }) => {
       );
     }
   };
-
-  console.log(cartItems);
   return (
     <>
       <div className="product-card">
@@ -41,7 +52,7 @@ const Product = ({ product, cartItems, setCartItems, isOrderConfirmed }) => {
           <img
             src={product.image.mobile}
             alt={product.name}
-            className="product-image"
+            className={`product-image ${isSelected ? "is-selected" : ""}`}
           />
 
           {isAddingToCart ? (

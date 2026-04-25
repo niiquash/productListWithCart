@@ -16,11 +16,9 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
-  console.log(products);
-
   return (
     <div className="app-container">
-      <h1>Desserts</h1>
+      <h1 className="app-heading">Desserts</h1>
       <div className="products-grid">
         {products.map((product) => (
           <Product
@@ -32,7 +30,12 @@ function App() {
           />
         ))}
       </div>
-      <Cart cartItems={cartItems} setIsConfirmingOrder={setIsConfirmingOrder} />
+      <Cart
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+        setIsConfirmingOrder={setIsConfirmingOrder}
+        setIsOrderConfirmed={setIsOrderConfirmed}
+      />
       {isConfirmingOrder && (
         <OrderSummary
           setIsConfirmingOrder={setIsConfirmingOrder}

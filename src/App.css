@@ -3,6 +3,12 @@
   position: relative;
 }
 
+.app-heading {
+  font-size: 40px;
+  font-weight: 700;
+  color: #260f08;
+}
+
 .products-grid {
   display: flex;
   flex-direction: column;
@@ -10,4 +16,18 @@
   gap: 24px;
   margin-top: 32px;
   margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 40px;
+  }
+
+  .products-grid {
+    width: 688px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 32px auto;
+    gap: 24px;
+  }
 }

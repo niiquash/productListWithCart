@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 327px;
+  width: 327px;
 }
 
 .product-image-and-button {
@@ -13,6 +13,10 @@
 .product-image {
   width: 100%;
   border-radius: 8px;
+}
+
+.product-image.is-selected {
+  border: 2px solid #c73b0f;
 }
 
 .product-category {
@@ -30,4 +34,10 @@
   font-size: 16px;
   font-weight: 600;
   color: #c73b0f;
+}
+
+@media (min-width: 768px) {
+  .product-card {
+    width: 213px;
+  }
 }
