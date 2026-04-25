@@ -6,6 +6,7 @@ import OrderSummary from "./components/orderSummary/OrderSummary";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     fetch("/data.json")
@@ -20,11 +21,16 @@ function App() {
       <h1>Desserts</h1>
       <div className="products-grid">
         {products.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product
+            key={product.id}
+            product={product}
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+          />
         ))}
       </div>
-      <Cart />
-      <OrderSummary />
+      <Cart cartItems={cartItems} />
+      {/* <OrderSummary /> */}
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import "./AddToCartButton.css";
 
-const AddToCartButton = () => {
+const AddToCartButton = ({ handleAddToCartClick }) => {
   return (
-    <button className="add-to-cart-button">
+    <button className="add-to-cart-button" onClick={handleAddToCartClick}>
       <img
         src="/images/icon-add-to-cart.svg"
         alt="Icon of a cart"

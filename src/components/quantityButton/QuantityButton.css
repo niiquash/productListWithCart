@@ -21,21 +21,27 @@
 
 .quantity-reduce-button,
 .quantity-increase-button {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border: 1px solid white;
   border-radius: 50%;
   background: none;
   color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   cursor: pointer;
 }
 
 .quantity-reduce-button:hover,
 .quantity-increase-button:hover {
-  background-color: white;
+  background-color: #2b1a0e;
   color: #c73b0f;
+}
+
+button img {
+  width: 14px;
+  height: 14px;
+  display: block;
 }

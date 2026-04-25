@@ -1,8 +1,27 @@
+import { useState } from "react";
 import AddToCartButton from "../addToCartButton/addToCartButton";
 import QuantityButton from "../quantityButton/QuantityButton";
 import "./Product.css";
 
-const Product = ({ product }) => {
+const Product = ({ product, cartItems, setCartItems }) => {
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+
+  const handleAddToCartClick = () => {
+    setIsAddingToCart(true);
+    setCartItems([...cartItems, { ...product, quantity: 1 }]);
+  };
+
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(newQuantity);
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === product.id ? { ...item, quantity: newQuantity } : item,
+      ),
+    );
+  };
+
+  console.log(cartItems);
   return (
     <>
       <div className="product-card">
@@ -12,8 +31,15 @@ const Product = ({ product }) => {
             alt={product.name}
             className="product-image"
           />
-          <AddToCartButton />
-          <QuantityButton />
+
+          {isAddingToCart ? (
+            <QuantityButton
+              quantity={quantity}
+              handleQuantityChange={handleQuantityChange}
+            />
+          ) : (
+            <AddToCartButton handleAddToCartClick={handleAddToCartClick} />
+          )}
         </div>
         <div className="product-info">
           <p className="product-category">{product.category}</p>
