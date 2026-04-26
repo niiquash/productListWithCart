@@ -170,3 +170,10 @@
     max-width: 688px;
   }
 }
+
+@media (min-width: 1440px) {
+  .cart {
+    max-width: 384px;
+    align-self: start;
+  }
+}

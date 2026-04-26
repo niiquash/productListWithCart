@@ -7,6 +7,8 @@
   font-size: 40px;
   font-weight: 700;
   color: #260f08;
+  width: 327px;
+  margin: 0 auto;
 }
 
 .products-grid {
@@ -29,5 +31,29 @@
     grid-template-columns: repeat(3, 1fr);
     margin: 32px auto;
     gap: 24px;
+  }
+
+  .app-heading {
+    width: 688px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .app-container {
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: [col-start] 2fr [col-2] 1fr[col-end];
+    gap: 32px;
+
+    max-width: 1216px;
+    margin: 0 auto;
+  }
+
+  .app-heading {
+    width: 800px;
+  }
+  .products-grid {
+    width: 800px;
+    grid-gap: 32px 24px;
   }
 }

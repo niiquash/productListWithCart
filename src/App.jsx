@@ -18,17 +18,19 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="app-heading">Desserts</h1>
-      <div className="products-grid">
-        {products.map((product) => (
-          <Product
-            key={product.id}
-            product={product}
-            cartItems={cartItems}
-            setCartItems={setCartItems}
-            isOrderConfirmed={isOrderConfirmed}
-          />
-        ))}
+      <div className="products-grid-and-heading">
+        <h1 className="app-heading">Desserts</h1>
+        <div className="products-grid">
+          {products.map((product) => (
+            <Product
+              key={product.id}
+              product={product}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+              isOrderConfirmed={isOrderConfirmed}
+            />
+          ))}
+        </div>
       </div>
       <Cart
         cartItems={cartItems}
